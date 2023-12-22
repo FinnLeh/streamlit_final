@@ -19,8 +19,8 @@ st.set_page_config(
 #logo_slide_path = "C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\backg.png"
 
 
-logo_path = r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/projectlogo/.jpg"
-logo_slide_path = r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\backg.png"
+logo_path = r"projectlogo.jpg"
+logo_slide_path = r"backg.png"
 
 st.image(logo_path, use_column_width=True)
 #### Sidebar
@@ -77,20 +77,20 @@ def start_page():
     st.write("")
     row1_col1, row1_col2, row1_col3 = st.columns([1,1,1])
     with row1_col1:
-        st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/vw.png", use_column_width=True)
-        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\bmw.png", use_column_width=True)
+        st.image(r"vw.png", use_column_width=True)
+        st.image(r"bmw.png", use_column_width=True)
         
     with row1_col2:
-        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\opel.png", use_column_width=True)
+        st.image(r"opel.png", use_column_width=True)
         st.write("")
         st.write("")
         st.write("")
-        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\benz.png", use_column_width=True)
+        st.image(r"benz.png", use_column_width=True)
     with row1_col3:
-        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\porsche.png", use_column_width=True)
+        st.image(r"porsche.png", use_column_width=True)
         st.write("")
         st.write("")
-        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\audi.png", use_column_width=True)
+        st.image(r"audi.png", use_column_width=True)
 
     st.write("")
     st.write("")
@@ -733,7 +733,7 @@ def predicting_one_car():
 ###
 def data_prediction():
 
-    template = pd.read_csv(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/Excel_Upload_Template.csv")
+    template = pd.read_csv(r"Excel_Upload_Template.csv")
     st.title("Prediction")
     
     st.header("Bestimme den Preis eines Autos")    
@@ -743,7 +743,7 @@ def data_prediction():
     st.header("Bestimme den Preis mehrerer Autos")   
     st.markdown("Bitte nutze das Teamplate zur Bestimmung mehrerer Preise. Lade das Template mit den eingetragenen Werten hoch.")
     
-    template = open(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/Excel_Upload_Template.csv")
+    template = open(r"Excel_Upload_Template.csv")
     st.download_button(label="Download Template",
                         data = template,
                         file_name='prediction_template.csv',
@@ -763,14 +763,14 @@ def model_info():
     
     st.subheader("Performance")
     st.markdown("blablabla")
-    st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/actualpredicetplot.png", use_column_width=True)
+    st.image(r"actualpredicetplot.png", use_column_width=True)
 
     st.header("Modelling Prozess")
     st.subheader("Research Question")
     st.markdown("Wie kann ein in einer benutzerfreundlichen Web-App integriertes Machine Learning-Modell sowohl Verkaufenden als auch Kaufenden ermöglichen, effizient und effektiv Informationsasymmetrien zu verringern und dadurch zu einer fairen und transparenten Preisfindung auf dem deutschen Gebrauchtwagenmarkt beitragen?")
     st.subheader("Übersicht")
     st.markdown("In der folgenden Übersicht sind verschiedene Modelle, die während des Modellierungsprozesses getestet wurden, sowie ihre Metriken und Hyperparameter aufgeführt.")
-    st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/modelling.png", use_column_width=True)
+    st.image(r"modelling.png", use_column_width=True)
 
 #### Navigation
 #########################################################
