@@ -73,7 +73,7 @@ def start_page():
     st.title("The German Car Value Predictor")
     st.markdown("Willkommen bei The German Car Value Predictor! Entdecken Sie die Marktwerte von Gebrauchtwagen.")  
     st.header("Über uns")
-    st.markdown("The German Car Value Predictor wurde entwickelt, um die Preistransparenz auf dem Gebrauchtwagenmarkt zu erhöhen und damit die Informationsasymmetrie zwischen Experten und Laien zu verringern. Unser Machine-Learning-Modell, das auf einer umfangreichen Datenmenge des Marktführers Autoscout trainiert wurde, ermöglicht eine genaue Preisfindung für verschiedene Fahrzeugmodelle der Marken: Volkswagen, Mercedes-Benz, Audi, BMW, Opel und Porsche. Unsere Modelle werden in regelmässigen Abständen verbessert, um die bestmöglichen Preise zu ermitteln. Die Preise werden auf Basis des deutschen Gebrauchtwagenmarktes ermittelt und sind in Euro (€) angegeben.")
+    st.markdown("The German Car Value Predictor wurde entwickelt, um die Preistransparenz auf dem Gebrauchtwagenmarkt zu erhöhen und damit die Informationsasymmetrie zwischen Verkäufer und Käufer zu verringern. Unser Machine-Learning-Modell, das auf einer umfangreichen Datenmenge des Marktführers Autoscout24 trainiert wurde, ermöglicht eine genaue Preisfindung für verschiedene Fahrzeugmodelle der Marken: Volkswagen, Mercedes-Benz, Audi, BMW, Opel und Porsche. Unsere Modelle werden in regelmässigen Abständen verbessert und jeden Monat geupdatet gegeben den Marktbedingungen, um die bestmöglichen Preise zu ermitteln. Die Preise werden auf Basis des deutschen Gebrauchtwagenmarktes ermittelt und sind in Euro (€) angegeben.")
     st.write("")
     st.write("")
     row1_col1, row1_col2, row1_col3 = st.columns([1,1,1])
@@ -759,10 +759,20 @@ def data_prediction():
 def model_info():
     st.title("Modell Performance")    
     st.header("Aktuelles Modell")
-    st.markdown("blablabla")
+    st.markdown("Das aktuelle Modell wurde am 22.12.2023 auf The German Car Value Predictor hochgeladen. Wir werden das Modell kontinuierlich anpassen und verbessern. Wenn ein neues Modell hochgeladen wird, wirst du hier darüber informiert. Die Updates folgen monatlich.")
     
     st.subheader("Performance")
-    st.markdown("blablabla")
+    markdown_text = """
+    ### Model Performance Metrics
+
+    | Metric | Train                 | Validation           | Test                 |
+    | ------ | --------------------- | -------------------- | -------------------- |
+    | RMSE   | 3245.443821861982     | 7576.675649713866    | 7781.267997829927    |
+    | MAPE   | 0.06890607938966471   | 0.12128657638095858  | 0.1265090272584851   |
+    | MAE    | 2086.4275143101972    | 3937.195006313225    | 4012.0150687295004   |
+    | R^2    | 0.9794345445803275    | 0.9191033293570062   | 0.9193551817611662   |
+    """
+    st.markdown(markdown_text)
     st.image(r"actualpredicetplot.png", use_column_width=True)
 
     st.header("Modelling Prozess")
@@ -770,7 +780,7 @@ def model_info():
     st.markdown("Wie kann ein in einer benutzerfreundlichen Web-App integriertes Machine Learning-Modell sowohl Verkaufenden als auch Kaufenden ermöglichen, effizient und effektiv Informationsasymmetrien zu verringern und dadurch zu einer fairen und transparenten Preisfindung auf dem deutschen Gebrauchtwagenmarkt beitragen?")
     st.subheader("Übersicht")
     st.markdown("In der folgenden Übersicht sind verschiedene Modelle, die während des Modellierungsprozesses getestet wurden, sowie ihre Metriken und Hyperparameter aufgeführt.")
-    st.image(r"modelling.png", use_column_width=True)
+    st.image(r"modelling.jpeg", use_column_width=True)
 
 #### Navigation
 #########################################################
