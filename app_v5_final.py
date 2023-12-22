@@ -14,8 +14,13 @@ st.set_page_config(
     layout="wide"
     )
 
-logo_path = "projectlogo.jpg"
-logo_slide_path = "backg.png"
+#logo_path = "C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\projectlogo.jpg"
+
+#logo_slide_path = "C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\backg.png"
+
+
+logo_path = r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/projectlogo/.jpg"
+logo_slide_path = r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\backg.png"
 
 st.image(logo_path, use_column_width=True)
 #### Sidebar
@@ -72,20 +77,20 @@ def start_page():
     st.write("")
     row1_col1, row1_col2, row1_col3 = st.columns([1,1,1])
     with row1_col1:
-        st.image("vw.png", use_column_width=True)
-        st.image("bmw.png", use_column_width=True)
+        st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/vw.png", use_column_width=True)
+        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\bmw.png", use_column_width=True)
         
     with row1_col2:
-        st.image("opel.png", use_column_width=True)
+        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\opel.png", use_column_width=True)
         st.write("")
         st.write("")
         st.write("")
-        st.image("benz.png", use_column_width=True)
+        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\benz.png", use_column_width=True)
     with row1_col3:
-        st.image("porsche.png", use_column_width=True)
+        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\porsche.png", use_column_width=True)
         st.write("")
         st.write("")
-        st.image("audi.png", use_column_width=True)
+        st.image(r"C:\Users\Michèl\Desktop\Business Analytics\streamlit_final\audi.png", use_column_width=True)
 
     st.write("")
     st.write("")
@@ -556,7 +561,7 @@ def predicting_uploaded_data():
             st.write(output_df)
             
         # Add User Feedback
-        st.success("Der Preis von %i Auto wurde bestimmt! Ihre Excel-Datei steht für dich zum Download bereit." % output_df.shape[0])
+        st.success("Der Preis von %i Auto wurde bestimmt! Ihre Excel-Datei steht zum Download bereit." % output_df.shape[0])
         
     # Add Download Button
         import io
@@ -684,11 +689,12 @@ def predicting_one_car():
                 
         with st.spinner('Model is predicting. Bitte warte...'):
             processed_einzel_df = input_df_to_model_input_df(input_einzel_df)
-            st.write(processed_einzel_df)
+            
+        
             
             scaled_einzel_data = pd.DataFrame(scaler.transform(processed_einzel_df), columns=processed_einzel_df.columns, index=processed_einzel_df.index)            
             
-            st.write(scaled_einzel_data)
+  
 
             #scaler           
             #predicting
@@ -727,7 +733,7 @@ def predicting_one_car():
 ###
 def data_prediction():
 
-    template = pd.read_csv("Excel_Upload_Template.csv")
+    template = pd.read_csv(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/Excel_Upload_Template.csv")
     st.title("Prediction")
     
     st.header("Bestimme den Preis eines Autos")    
@@ -737,7 +743,7 @@ def data_prediction():
     st.header("Bestimme den Preis mehrerer Autos")   
     st.markdown("Bitte nutze das Teamplate zur Bestimmung mehrerer Preise. Lade das Template mit den eingetragenen Werten hoch.")
     
-    template = open("Excel_Upload_Template.csv")
+    template = open(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/Excel_Upload_Template.csv")
     st.download_button(label="Download Template",
                         data = template,
                         file_name='prediction_template.csv',
@@ -757,14 +763,14 @@ def model_info():
     
     st.subheader("Performance")
     st.markdown("blablabla")
-    st.image("actualpredicetplot.png", use_column_width=True)
+    st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/actualpredicetplot.png", use_column_width=True)
 
     st.header("Modelling Prozess")
     st.subheader("Research Question")
     st.markdown("Wie kann ein in einer benutzerfreundlichen Web-App integriertes Machine Learning-Modell sowohl Verkaufenden als auch Kaufenden ermöglichen, effizient und effektiv Informationsasymmetrien zu verringern und dadurch zu einer fairen und transparenten Preisfindung auf dem deutschen Gebrauchtwagenmarkt beitragen?")
     st.subheader("Übersicht")
     st.markdown("In der folgenden Übersicht sind verschiedene Modelle, die während des Modellierungsprozesses getestet wurden, sowie ihre Metriken und Hyperparameter aufgeführt.")
-    st.image("modelling.png", use_column_width=True)
+    st.image(r"C:/Users/Michèl/Desktop/Business Analytics/streamlit_final/modelling.png", use_column_width=True)
 
 #### Navigation
 #########################################################
@@ -799,17 +805,31 @@ if app_mode == "Prediction":
           self.mb.fit(X[X["Marke_mercedes-benz"] == 1], y[X["Marke_mercedes-benz"] == 1])
           self.opel.fit(X[X["Marke_opel"] == 1], y[X["Marke_opel"] == 1])
     
+
       def predict(self, X):
-          # Create predictions for each brand and combine them
-          y_audi_pred = pd.Series(self.audi.predict(X[X["Marke_audi"] == 1]), index=X[X["Marke_audi"] == 1].index)
-          y_vw_pred = pd.Series(self.vw.predict(X[X["Marke_volkswagen"] == 1]), index=X[X["Marke_volkswagen"] == 1].index)
-          y_bmw_pred = pd.Series(self.bmw.predict(X[X["Marke_bmw"] == 1]), index=X[X["Marke_bmw"] == 1].index)
-          y_porsche_pred = pd.Series(self.porsche.predict(X[X["Marke_porsche"] == 1]), index=X[X["Marke_porsche"] == 1].index)
-          y_mb_pred = pd.Series(self.mb.predict(X[X["Marke_mercedes-benz"] == 1]), index=X[X["Marke_mercedes-benz"] == 1].index)
-          y_opel_pred = pd.Series(self.opel.predict(X[X["Marke_opel"] == 1]), index=X[X["Marke_opel"] == 1].index)
-    
-          y_all_pred = pd.concat([y_audi_pred, y_vw_pred, y_bmw_pred, y_porsche_pred, y_mb_pred, y_opel_pred]).reindex(X.index)
-          return y_all_pred         
+          predictions = []
+      
+          brands = {
+          'audi': self.audi, 
+          'volkswagen': self.vw, 
+          'bmw': self.bmw, 
+          'porsche': self.porsche, 
+          'mercedes-benz': self.mb, 
+          'opel': self.opel
+      }
+
+          for brand, model in brands.items():
+              brand_data = X[X[f"Marke_{brand}"] == 1]
+              if not brand_data.empty:
+                  brand_pred = pd.Series(model.predict(brand_data), index=brand_data.index)
+                  predictions.append(brand_pred)
+
+          if predictions:
+              y_all_pred = pd.concat(predictions).reindex(X.index)
+              return y_all_pred
+          else:
+          # Rückgabe eines leeren DataFrame oder einer Fehlermeldung
+              return pd.Series([], index=X.index)
    
     @st.cache_data
     def load_model():
