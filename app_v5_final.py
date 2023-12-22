@@ -14,8 +14,8 @@ st.set_page_config(
     layout="wide"
     )
 
-logo_path = "/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/projectlogo.jpg"
-logo_slide_path = "/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/backg.png"
+logo_path = "projectlogo.jpg"
+logo_slide_path = "backg.png"
 
 st.image(logo_path, use_column_width=True)
 #### Sidebar
@@ -72,20 +72,20 @@ def start_page():
     st.write("")
     row1_col1, row1_col2, row1_col3 = st.columns([1,1,1])
     with row1_col1:
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/vw.png", use_column_width=True)
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/bmw.png", use_column_width=True)
+        st.image("vw.png", use_column_width=True)
+        st.image("bmw.png", use_column_width=True)
         
     with row1_col2:
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/opel.png", use_column_width=True)
+        st.image("opel.png", use_column_width=True)
         st.write("")
         st.write("")
         st.write("")
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/benz.png", use_column_width=True)
+        st.image("benz.png", use_column_width=True)
     with row1_col3:
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/porsche.png", use_column_width=True)
+        st.image("porsche.png", use_column_width=True)
         st.write("")
         st.write("")
-        st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/audi.png", use_column_width=True)
+        st.image("audi.png", use_column_width=True)
 
     st.write("")
     st.write("")
@@ -727,7 +727,7 @@ def predicting_one_car():
 ###
 def data_prediction():
 
-    template = pd.read_csv("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/Excel_Upload_Template.csv")
+    template = pd.read_csv("Excel_Upload_Template.csv")
     st.title("Prediction")
     
     st.header("Bestimme den Preis eines Autos")    
@@ -737,7 +737,7 @@ def data_prediction():
     st.header("Bestimme den Preis mehrerer Autos")   
     st.markdown("Bitte nutze das Teamplate zur Bestimmung mehrerer Preise. Lade das Template mit den eingetragenen Werten hoch.")
     
-    template = open("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/Excel_Upload_Template.csv")
+    template = open("Excel_Upload_Template.csv")
     st.download_button(label="Download Template",
                         data = template,
                         file_name='prediction_template.csv',
@@ -757,14 +757,14 @@ def model_info():
     
     st.subheader("Performance")
     st.markdown("blablabla")
-    st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/actualpredicetplot.png", use_column_width=True)
+    st.image("actualpredicetplot.png", use_column_width=True)
 
     st.header("Modelling Prozess")
     st.subheader("Research Question")
     st.markdown("Wie kann ein in einer benutzerfreundlichen Web-App integriertes Machine Learning-Modell sowohl Verkaufenden als auch Kaufenden ermöglichen, effizient und effektiv Informationsasymmetrien zu verringern und dadurch zu einer fairen und transparenten Preisfindung auf dem deutschen Gebrauchtwagenmarkt beitragen?")
     st.subheader("Übersicht")
     st.markdown("In der folgenden Übersicht sind verschiedene Modelle, die während des Modellierungsprozesses getestet wurden, sowie ihre Metriken und Hyperparameter aufgeführt.")
-    st.image("/Users/DarioPatzi/Desktop/Business Analytics/Module 05 BAD/final_app_debugged/modelling.png", use_column_width=True)
+    st.image("modelling.png", use_column_width=True)
 
 #### Navigation
 #########################################################
