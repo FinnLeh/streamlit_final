@@ -780,7 +780,7 @@ def model_info():
     st.markdown("Wie kann ein in einer benutzerfreundlichen Web-App integriertes Machine Learning-Modell sowohl Verkaufenden als auch Kaufenden ermöglichen, effizient und effektiv Informationsasymmetrien zu verringern und dadurch zu einer fairen und transparenten Preisfindung auf dem deutschen Gebrauchtwagenmarkt beitragen?")
     st.subheader("Übersicht")
     st.markdown("In der folgenden Übersicht sind verschiedene Modelle, die während des Modellierungsprozesses getestet wurden, sowie ihre Metriken und Hyperparameter aufgeführt.")
-    st.image(r"modelling.jpeg", use_column_width=True)
+    st.image(r"modelling.jpg", use_column_width=True)
 
 #### Navigation
 #########################################################
